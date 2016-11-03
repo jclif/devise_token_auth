@@ -64,6 +64,7 @@ module ActionDispatch::Routing
             # preserve the resource class thru oauth authentication by setting name of
             # resource as "resource_class" param
             match "#{full_path}/:provider", to: redirect{|params, request|
+              binding.pry
               # get the current querystring
               qs = CGI::parse(request.env["QUERY_STRING"])
 
